@@ -1,0 +1,223 @@
+/* ====================== GLOBAL ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #222;
+}
+
+/* ====================== HEADER ====================== */
+header {
+    background: linear-gradient(135deg, #110222, #b00677);
+    padding: 100px 20px;
+    text-align: center;
+    transition: background 0.4s ease;
+}
+
+/* Light Mode Header */
+body.light-mode header {
+    background: linear-gradient(135deg, #739df0, #e2a3eb);
+    color: #222;
+}
+
+h1 {
+    font-size: clamp(1.9rem, 6.8vw, 3.8rem);
+    white-space: nowrap;
+    line-height: 1.05;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Light Mode Text im Header anpassen */
+body.light-mode h1,
+body.light-mode .subtitle {
+    color: #222;
+}
+
+.logo {
+    width: clamp(120px, 25vw, 200px);
+    margin: 20px 0;
+}
+
+/* ====================== BUTTON (Hauptbutton) ====================== */
+button {
+    background: linear-gradient(135deg, #110222, #b00677);
+    color: rgb(255, 255, 255);
+    padding: 16px 40px;
+    border: 1.5px solid #ffffff;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Light Mode Hauptbutton */
+body.light-mode button {
+    background: linear-gradient(135deg, #739df0, #e2a3eb);
+    color: #222;
+    border: 1.5px solid #000000;
+}
+
+/* Hover-Effekte NUR auf Geräten mit echter Maus (Desktop) */
+@media (hover: hover) {
+    button:hover {
+        background: #110222;
+        color: rgb(255, 255, 255);
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+    }
+}
+
+/* Touch-Feedback auf Mobile */
+button:active {
+    transform: scale(0.92);
+}
+
+/* Light Mode Button Hover + Hover-Effekte NUR auf Geräten mit echter Maus (Desktop) */
+@media (hover: hover) {
+    body.light-mode button:hover {
+        background: #110222;
+        color: rgb(255, 255, 255);
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+    }
+}
+
+/* Touch-Feedback auf Mobile */
+body.light-mode button:active {
+    transform: scale(0.92);
+}
+
+/* ====================== CARDS ====================== */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1f1f1f;
+    border-radius: 16px;
+    padding: 30px 25px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.light-mode .card {
+    background: #ffffff;
+    color: #222;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================== FOOTER ====================== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #111;
+    margin-top: 40px;
+}
+
+body.light-mode footer {
+    background: #e9ecef;
+    color: #222;
+}
+
+/* ====================== THEME TOGGLE BUTTON ====================== */
+/* Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #110222, #b00677);
+    color: #ffcc00;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Hover-Effekte NUR auf Geräten mit echter Maus (Desktop) */
+@media (hover: hover) {
+    .theme-toggle:hover {
+        background: linear-gradient(135deg, #739df0, #e2a3eb);
+        transform: scale(1.12);
+        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+    }
+}
+
+/* Touch-Feedback auf Mobile */
+.theme-toggle:active {
+    transform: scale(0.92);
+}
+
+/* Light Mode Toggle */
+body.light-mode .theme-toggle {
+    background: linear-gradient(135deg, #739df0, #e2a3eb);
+    color: #222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+/* Hover-Effekte NUR auf Geräten mit echter Maus (Desktop) */
+@media (hover: hover) {
+    body.light-mode .theme-toggle:hover {
+        background: linear-gradient(135deg, #110222, #b00677);
+        box-shadow: 0 6px 20px rgba(232, 255, 22, 0.25);
+    }
+}
+
+/* Touch-Feedback auf Mobile */
+body.light-mode .theme-toggle:active {
+    transform: scale(0.92);
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 600px) {
+    header {
+        padding: 80px 15px;
+    }
+}
